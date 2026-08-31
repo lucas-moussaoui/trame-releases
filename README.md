@@ -1,20 +1,15 @@
-# Trame — versions publiées
+# Trame
 
-Binaires de **Trame**, application de prise de notes multi-appareil (Windows et Android),
-hors-ligne d'abord et synchronisée.
+Dépôt public de **Trame**, application de prise de notes multi-appareil (Windows et
+Android), hors-ligne d'abord et synchronisée. Il contient deux choses :
 
-Le code source est privé : ce dépôt ne sert qu'à distribuer les versions. Il est public
-parce que l'updater du PC et la détection de version sur Android lisent les releases sans
-authentification.
+- **Les binaires publiés** — [dernière version](https://github.com/lucas-moussaoui/trame-releases/releases/latest) :
+  installeur Windows (`.exe`) et application Android (`.apk`).
+- **Le site** — `index.html` et `privacy.html`, déployés sur Vercel.
 
-## Télécharger
-
-[Dernière version](https://github.com/lucas-moussaoui/trame-releases/releases/latest) —
-installeur Windows (`.exe`) et application Android (`.apk`).
-
-Sur PC, l'application se met ensuite à jour toute seule. Sur Android, elle signale les
-nouvelles versions et ouvre le téléchargement de l'APK.
+Le code source de l'application est privé. Ce dépôt est public parce que l'updater du PC
+et la détection de version sur Android lisent les releases sans authentification.
 
 ## Confidentialité
 
-[Règles de confidentialité](PRIVACY.md)
+Les [règles de confidentialité](privacy.html) sont publiées avec le site.

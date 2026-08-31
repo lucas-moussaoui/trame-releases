@@ -1,81 +1,147 @@
 <!doctype html>
 <html lang="fr">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Trame — Règles de confidentialité</title>
+<meta name="description" content="Règles de confidentialité de Trame : données collectées, hébergement, et usage de la portée Google Drive drive.file.">
+<link rel="icon" href="./logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { color-scheme: dark; }
-  body {
-    margin: 0; padding: 3rem 1.25rem;
-    background: #0a0a10; color: #e8e8f0;
-    font: 16px/1.65 system-ui, -apple-system, Segoe UI, sans-serif;
+  :root {
+    --s0: #0a0a10; --s1: #101018; --s2: #161622; --s3: #1f1f2e;
+    --edge: #232332; --edge-strong: #303046;
+    --ink1: #ededf2; --ink2: #9d9db2; --ink3: #62627a;
+    --accent: #8b5cf6; --accent-soft: rgba(139, 92, 246, 0.14);
+    color-scheme: dark;
   }
-  main { max-width: 38rem; margin: 0 auto; }
-  h1 { font-size: 1.5rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
-  .sub { color: #6f6f85; margin: 0 0 2.5rem; font-size: .9rem; }
-  h2 { font-size: 1rem; margin: 2.25rem 0 .6rem; color: #c9c9dd; }
-  ul { padding-left: 1.1rem; }
-  li { margin: .35rem 0; }
-  a { color: #8ab4ff; }
-  code { background: #16161f; padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
-  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #22222e; color: #6f6f85; font-size: .9rem; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--s0); color: var(--ink1);
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .glow {
+    position: fixed; top: -30rem; left: 50%;
+    width: 60rem; height: 40rem; transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(139,92,246,.14), transparent 62%);
+    pointer-events: none; filter: blur(20px);
+  }
+  .wrap { position: relative; max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.5rem 0;
+  }
+  .brand {
+    display: flex; align-items: center; gap: .6rem;
+    font-weight: 600; letter-spacing: -.01em; color: inherit; text-decoration: none;
+  }
+  .brand img { width: 30px; height: auto; display: block; }
+  header a.back { color: var(--ink2); text-decoration: none; font-size: .93rem; }
+  header a.back:hover { color: var(--ink1); }
+
+  h1 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); letter-spacing: -.025em; margin: 3rem 0 .4rem; }
+  .updated { color: var(--ink3); font-size: .88rem; margin: 0 0 2.5rem; }
+  h2 {
+    font-size: 1.08rem; font-weight: 600; letter-spacing: -.01em;
+    margin: 2.75rem 0 .6rem; padding-top: 1.75rem;
+    border-top: 1px solid var(--edge);
+  }
+  p { color: var(--ink2); margin: 0 0 1rem; }
+  strong { color: var(--ink1); font-weight: 600; }
+  ul { color: var(--ink2); padding-left: 1.15rem; margin: 0 0 1rem; }
+  li { margin: .45rem 0; }
+  a { color: #a78bfa; }
+  code {
+    background: var(--s2); border: 1px solid var(--edge);
+    padding: .12rem .4rem; border-radius: 5px;
+    font-size: .87em; color: var(--ink1);
+    word-break: break-all;
+  }
+  .callout {
+    background: var(--accent-soft); border: 1px solid rgba(139,92,246,.28);
+    border-radius: 12px; padding: 1.1rem 1.25rem; margin: 1.25rem 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  footer {
+    border-top: 1px solid var(--edge); margin-top: 4rem;
+    padding: 2rem 0 3rem; color: var(--ink3); font-size: .88rem;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  footer a { color: var(--ink2); text-decoration: none; }
+  footer a:hover { color: var(--ink1); }
 </style>
-<main>
+</head>
+<body>
+<div class="glow"></div>
+<div class="wrap">
+  <header>
+    <a class="brand" href="./"><img src="./logo.webp" alt=""> Trame</a>
+    <a class="back" href="./">← Retour</a>
+  </header>
+
   <h1>Règles de confidentialité</h1>
-  <p class="sub">Trame — dernière mise à jour : 31 août 2026</p>
+  <p class="updated">Dernière mise à jour : 31 août 2026</p>
 
   <p>
-    Trame est une application de prise de notes personnelle. Elle ne vend, ne loue et ne
-    partage aucune donnée avec des tiers, et n'affiche aucune publicité.
+    Trame est une application de prise de notes. Aucune donnée n'est vendue, louée
+    ou partagée avec des tiers, et l'application n'affiche aucune publicité.
   </p>
 
   <h2>Données collectées</h2>
   <ul>
-    <li><strong>Compte</strong> : adresse e-mail et mot de passe (haché), pour l'authentification.</li>
-    <li><strong>Contenu</strong> : les notes, pages, événements et fichiers que l'utilisateur crée lui-même.</li>
+    <li><strong>Compte</strong> — adresse e-mail et mot de passe (haché), pour l'authentification.</li>
+    <li><strong>Contenu</strong> — les notes, pages, événements et fichiers que vous créez.</li>
   </ul>
   <p>
-    Ces données sont hébergées sur <a href="https://supabase.com">Supabase</a> (Union européenne)
-    et répliquées localement sur les appareils de l'utilisateur pour le fonctionnement hors ligne.
-    Chaque compte est isolé au niveau de la base par des politiques de sécurité par ligne.
+    Ces données sont hébergées sur <a href="https://supabase.com">Supabase</a> (Union
+    européenne) et répliquées localement sur vos appareils pour le fonctionnement hors
+    ligne. Chaque compte est isolé au niveau de la base par des politiques de sécurité
+    par ligne (RLS).
   </p>
 
   <h2>Utilisation des données Google</h2>
   <p>
-    Lorsque l'utilisateur relie son compte Google, Trame demande la seule autorisation
-    <code>drive.file</code>. Cette autorisation est volontairement la plus restreinte possible :
+    Si vous reliez votre compte Google, Trame demande une seule autorisation,
+    volontairement la plus restreinte que propose l'API Drive :
   </p>
+  <div class="callout">
+    <p><code>https://www.googleapis.com/auth/drive.file</code></p>
+    <p style="margin-bottom:0">
+      Trame n'accède <strong>qu'aux fichiers qu'elle a elle-même créés</strong>. Elle ne
+      peut ni lire, ni lister, ni modifier le reste de votre Drive.
+    </p>
+  </div>
   <ul>
-    <li>Trame n'accède <strong>qu'aux fichiers qu'elle a elle-même créés</strong> dans Google&nbsp;Drive.</li>
-    <li>Elle ne peut ni lire, ni lister, ni modifier les autres fichiers du Drive.</li>
     <li>Les fichiers créés sont rangés dans un dossier <code>Trame</code>, visible et
-        contrôlable par l'utilisateur depuis son Drive.</li>
+        contrôlable depuis votre Drive.</li>
+    <li>Ils servent uniquement à afficher les pièces jointes dans l'application.</li>
+    <li>Ils ne sont ni analysés, ni transmis à un tiers, ni utilisés pour entraîner un modèle.</li>
   </ul>
   <p>
-    Ces fichiers servent uniquement à afficher les pièces jointes dans l'application. Ils ne
-    sont ni analysés, ni transmis à un tiers, ni utilisés pour entraîner un modèle.
-  </p>
-  <p>
     L'utilisation des informations reçues des API Google par Trame respecte la
-    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
-    y compris ses exigences d'utilisation limitée (<em>Limited Use</em>).
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API
+    Services User Data Policy</a>, y compris ses exigences d'utilisation limitée
+    (<em>Limited Use</em>).
   </p>
 
   <h2>Fonctionnalités d'intelligence artificielle</h2>
   <p>
     Certaines fonctions envoient le contenu concerné à un fournisseur de modèle de langage
-    (Google&nbsp;Gemini par défaut), avec la clé API personnelle de l'utilisateur. Ces envois
-    n'ont lieu qu'à sa demande explicite. Aucune donnée n'est envoyée à un fournisseur d'IA
-    autrement.
+    (Google Gemini par défaut), avec votre propre clé API, et uniquement à votre demande
+    explicite. Aucune donnée n'est envoyée à un fournisseur d'IA autrement.
   </p>
 
   <h2>Conservation et suppression</h2>
   <ul>
     <li>Les données sont conservées tant que le compte existe.</li>
-    <li>La suppression du compte efface l'ensemble des données associées.</li>
+    <li>La suppression du compte efface en cascade l'ensemble des données associées.</li>
     <li>L'accès Google peut être révoqué à tout moment depuis
-        <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> ;
-        les fichiers déjà présents dans le Drive restent la propriété de l'utilisateur.</li>
+        <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+        Les fichiers déjà présents dans votre Drive vous appartiennent et y restent.</li>
   </ul>
 
   <h2>Contact</h2>
@@ -85,7 +151,9 @@
   </p>
 
   <footer>
-    <a href="./index.html">← Retour</a>
+    <div>© 2026 Trame</div>
+    <div><a href="./">Accueil</a></div>
   </footer>
-</main>
+</div>
+</body>
 </html>
